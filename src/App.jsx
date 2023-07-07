@@ -1,14 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-import "./index.css";
+import { createRoot } from 'react-dom/client';
+import { Container } from "./styles";
+import Header from "./components/header";
+import './index.css'
 
 const App = () => (
-  <div className="container">
-    <div>Name: movie-charectes-shell</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+  <Container>
+    <Header />
+    <section>
+      <h1 className='title'>Here I put the component Federation</h1>
+    </section>
+  </Container>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+const root = createRoot(document.getElementById("app"));
+root.render(<App />);
+
