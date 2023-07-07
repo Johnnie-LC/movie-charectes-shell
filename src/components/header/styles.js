@@ -22,5 +22,6 @@ export const NavMovies = styled.nav`
     padding: 1rem;
     background-color: gray;
     min-width: 110px;
+    text-align: center;
   }
 `

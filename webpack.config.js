@@ -43,7 +43,9 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "movie_charectes_shell",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        // harryPotter: 'CharactersOne@http://localhost:4001/remoteEntry.js',
+      },
       exposes: {},
       shared: {
         ...deps,

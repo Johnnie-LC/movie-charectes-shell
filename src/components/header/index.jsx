@@ -1,7 +1,7 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import { HeaderContainer, NavMovies } from './styles'
 import GoogleTraslateButton from './googleTranslate'
-// const GoogleTraslateButton = lazy(()=>import('./googleTranslate'));
+
 const movies = [
   {
     title: 'Harry Potter',
@@ -16,7 +16,6 @@ const movies = [
 ]
 
 const Header = () => {
-  console.log({GoogleTraslateButton});
   return(
   <HeaderContainer id="headerID">
     <h1>Personages</h1>
