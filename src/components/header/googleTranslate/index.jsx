@@ -19,7 +19,7 @@ export default function GoogleTraslate() {
         // pageLanguage: 'en',
         includedLanguages: 'en,es', // include this for selected languages
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: true,
+        autoDisplay: false,
       },
       'google_translate_element'
     );

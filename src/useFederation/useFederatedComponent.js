@@ -2,26 +2,16 @@ import { useState, useEffect, lazy } from "react";
 import { useDynamicScript } from './useDynamicScript'
 import { loadComponent } from "./util";
 
-
 export const useFederatedComponent = ({ remoteUrl, scope, module}) => {
-  const componentCache = new Map();
-  const key = `${remoteUrl}-${scope}-${module}`;
-  const [Component, setComponent] = useState(null);
-
+  const [Component, setComponent] = useState('q');
   const { ready, errorLoading } = useDynamicScript(remoteUrl);
+  
   useEffect(() => {
-    if (Component) setComponent(null);
-    // Only recalculate when key changes
-  }, [key]);
-
-  useEffect(() => {
-    if (ready && !Component) {
+    if (ready && Component === 'q') {
       const Comp = lazy(loadComponent(scope, module));
-      componentCache.set(key, Comp);
-      setComponent(Comp);
+       setComponent(Comp);
     }
-    // key includes all dependencies (scope/module)
-  }, [Component, ready, key]);
+  }, [Component, ready]);
 
   return { errorLoading, Component };
 };
