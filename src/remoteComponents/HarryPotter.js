@@ -7,11 +7,9 @@ const HarryPotter = () => {
   const { Component: RemoteHarryPotter, errorLoading: errorLoadingHarryPotter  } = useFederatedComponent(CharactersOne);
 
   return(
-  <>
   <FederatedComponenteWrap errorLoading={errorLoadingHarryPotter}>
       <RemoteHarryPotter />
   </FederatedComponenteWrap>
-  </>
 )}
 
 export default HarryPotter

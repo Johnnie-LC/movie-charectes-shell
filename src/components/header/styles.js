@@ -20,8 +20,12 @@ export const NavMovies = styled.nav`
 
   a {
     padding: 1rem;
-    background-color: gray;
-    min-width: 110px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: azure;
+    background-color: #a2c784;
+    min-width: 170px;
     text-align: center;
   }
 `

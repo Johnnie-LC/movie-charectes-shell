@@ -1,20 +1,32 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
-import { Container } from "./styles";
-import Header from "./components/header";
-// import HarryPotter from 'harryPotter/HarryPotter'
+import Home from './components/Container'
+import Error from './components/RoutError'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HarryPotter from "./remoteComponents/HarryPotter";
 import './index.css'
 
+const RickAndMorty = () => <div>Rick and Morty federation</div>
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <Error />,
+    children:[
+      {
+        path: '/HarryPotter',
+        element: <HarryPotter />
+      },
+      {
+        path: '/RickandMorty',
+        element: <RickAndMorty />
+      }
+    ]
+  },
+])
+
 const App = () => { 
-  return(
-  <Container>
-    <Header />
-    <section>
-      <HarryPotter />
-    </section>
-  </Container>
-)};
+  return(<RouterProvider router={router} />)};
 
 const root = createRoot(document.getElementById("app"));
 root.render(<App />);

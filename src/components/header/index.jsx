@@ -1,16 +1,17 @@
 import React from 'react'
 import { HeaderContainer, NavMovies } from './styles'
 import GoogleTraslateButton from './googleTranslate'
+import { Link } from 'react-router-dom'
 
 const movies = [
   {
     title: 'Harry Potter',
-    url: 'url',
+    url: '/HarryPotter',
     id: 1
   },
   {
     title: 'Rick and Morty',
-    url: 'url',
+    url: '/RickandMorty',
     id: 2
   }
 ]
@@ -22,8 +23,9 @@ const Header = () => {
     <GoogleTraslateButton />
     <NavMovies>
         {
-          movies.map(movie => 
-            <a href={movie.url} key={movie.id}>{movie.title}</a>)
+          movies.map(movie =>
+            <Link to={movie.url} key={movie.id}>{movie.title}</Link>
+          )
         }
     </NavMovies>
   </HeaderContainer>
